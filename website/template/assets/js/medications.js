@@ -19,27 +19,9 @@ let medicines = [
   },
 ];
 
+editCurrentMedicine();
 // updates the current medicine container with the medicine dictionary
 function editCurrentMedicine() {
-  let medicines = [
-    {
-      name: "Vitamin D",
-      disease: "Vitamin D Deficiency",
-      dosageAmount: 1,
-      dosageUnit: "softgel",
-      frequencyNumber: 1,
-      frequencyUnit: "Day(s)",
-      takeAsNeeded: false,
-      startDateMonth: 1,
-      startDateDay: 2,
-      startDateYear: 2022,
-      finishDateMonth: 1,
-      finishDateDay: 10,
-      finishDateYear: 2023,
-      indefiniteUsage: false,
-      notes: "take with water and a meal",
-    },
-  ];
   let final = `<tbody>
                           <tr class="unread">
                             <td>
@@ -96,8 +78,6 @@ function editCurrentMedicine() {
   //return final;
 }
 
-editCurrentMedicine();
-
 // removes a medication from the medicines list
 function deleteMedicine(name) {
   delete medicines[name];
@@ -105,7 +85,7 @@ function deleteMedicine(name) {
 
 // manually adds a medication to the medicines list
 function manualCreateMedicine() {
-  medicines.push({
+  const yes = {
     "name": document.getElementById("manualName").value,
     "disease": document.getElementById("manualDisease").value,
     "dosageAmount": Number(document.getElementById("manualDosageAmount").value),
@@ -114,7 +94,7 @@ function manualCreateMedicine() {
       document.getElementById("manualFrequencyNumber").value
     ),
     "frequencyUnit": document.getElementById("manualFrequencyUnit").value,
-    "takeAsNeeded": document.getElementById("manualTakeAsNeeded").value,
+    "takeAsNeeded": document.getElementById("manualTakeAsNeeded").checked,
     "startDateMonth": document.getElementById("manualStartDateMonth").value,
     "startDateDay": Number(document.getElementById("manualStartDateDay").value),
     "startDateYear": Number(document.getElementById("manualStartDateYear").value),
@@ -123,9 +103,11 @@ function manualCreateMedicine() {
     "finishDateYear": Number(
       document.getElementById("manualFinishDateYear").value
     ),
-    "indefiniteUsage": document.getElementById("manualIndefiniteUsage").value,
+    "indefiniteUsage": document.getElementById("manualIndefiniteUsage").checked,
     "notes": document.getElementById("manualNotes").value,
-  });
+  }
+  console.log(yes);
+  medicines.push(yes);
   editCurrentMedicine();
 }
 
