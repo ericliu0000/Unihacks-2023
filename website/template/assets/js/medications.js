@@ -1,47 +1,42 @@
-
-var medicines = [
-    {
-        "name": "Vitamin D",
-        "disease": "Vitamin D Deficiency",
-        "dosageAmount": 1,
-        "dosageUnit": "softgel",
-        "frequencyAmount": 1,
-        "frequencyNumber": 1,
-        "frequencyUnit": "Day(s)",
-        "takeAsNeeded": false,
-        "startDateMonth": 1,
-        "startDateDay": 2,
-        "startDateYear": 2022,
-        "finishDateMonth": 1,
-        "finishDateDay": 10,
-        "finishDateYear": 2023,
-        "indefiniteUsage": false,
-        "notes": "take with water and a meal"
-    }
-];
+let medicines = [{
+    "name": "Vitamin D",
+    "disease": "Vitamin D Deficiency",
+    "dosageAmount": 1,
+    "dosageUnit": "softgel",
+    "frequencyAmount": 1,
+    "frequencyNumber": 1,
+    "frequencyUnit": "Day(s)",
+    "takeAsNeeded": false,
+    "startDateMonth": 1,
+    "startDateDay": 2,
+    "startDateYear": 2022,
+    "finishDateMonth": 1,
+    "finishDateDay": 10,
+    "finishDateYear": 2023,
+    "indefiniteUsage": false,
+    "notes": "take with water and a meal"
+}];
 
 // updates the current medicine container with the medicine dictionary
 function editCurrentMedicine() {
-    var medicines = [
-    {
-      name: "Vitamin D",
-      disease: "Vitamin D Deficiency",
-      dosageAmount: 1,
-      dosageUnit: "softgel",
-      frequencyNumber: 1,
-      frequencyUnit: "Day(s)",
-      takeAsNeeded: false,
-      startDateMonth: 1,
-      startDateDay: 2,
-      startDateYear: 2022,
-      finishDateMonth: 1,
-      finishDateDay: 10,
-      finishDateYear: 2023,
-      indefiniteUsage: false,
-      notes: "take with water and a meal",
-    },
-  ];
-    var final = `<tbody>
+    let medicines = [{
+        name: "Vitamin D",
+        disease: "Vitamin D Deficiency",
+        dosageAmount: 1,
+        dosageUnit: "softgel",
+        frequencyNumber: 1,
+        frequencyUnit: "Day(s)",
+        takeAsNeeded: false,
+        startDateMonth: 1,
+        startDateDay: 2,
+        startDateYear: 2022,
+        finishDateMonth: 1,
+        finishDateDay: 10,
+        finishDateYear: 2023,
+        indefiniteUsage: false,
+        notes: "take with water and a meal",
+    },];
+    let final = `<tbody>
                           <tr class="unread">
                             <td>
                               <h6 class="mb-1">Medication/Illness</h6>
@@ -53,16 +48,16 @@ function editCurrentMedicine() {
                           </tr>\n`;
 
     for (let index = 0; index < medicines.length; index++) {
-      final += `<tr class="unread">
+        final += `<tr class="unread">
                             <td>
-                              <h6 class="mb-1">`+medicines[index]['name']+`</h6>
-                              <p class="m-0">`+medicines[index]['disease']+`</p>
+                              <h6 class="mb-1">` + medicines[index]['name'] + `</h6>
+                              <p class="m-0">` + medicines[index]['disease'] + `</p>
                             </td>
                             <td>
                               <h6 class="text-muted">
                                 <i
                                   class="fas fa-circle text-c-green f-10 m-r-15"></i
-                                >`+medicines[index]['dosageAmount'].toString()+' '+medicines[index]['dosageUnit']+' every '+medicines[index]['frequencyNumber'].toString()+' '+medicines[index]['frequencyUnit']+`
+                                >` + medicines[index]['dosageAmount'].toString() + ' ' + medicines[index]['dosageUnit'] + ' every ' + medicines[index]['frequencyNumber'].toString() + ' ' + medicines[index]['frequencyUnit'] + `
                               </h6>
                             </td>
                     
@@ -82,7 +77,7 @@ function editCurrentMedicine() {
     final += "</tbody>";
     document.getElementById("current-medication-table").innerHTML = final;
     //return final;
-  }
+}
 
 editCurrentMedicine();
 
@@ -115,29 +110,29 @@ function manualCreateMedicine() {
 }
 
 function monthToInt(month) {
-    if (month == "January") {
+    if (month === "January") {
         return 1;
-    } else if (month == "February") {
+    } else if (month === "February") {
         return 2;
-    } else if (month == "March") {
+    } else if (month === "March") {
         return 3;
-    } else if (month == "April") {
+    } else if (month === "April") {
         return 4;
-    } else if (month == "May") {
+    } else if (month === "May") {
         return 5;
-    } else if (month == "June") {
+    } else if (month === "June") {
         return 6;
-    } else if (month == "July") {
+    } else if (month === "July") {
         return 7;
-    } else if (month == "August") {
+    } else if (month === "August") {
         return 8;
-    } else if (month == "September") {
+    } else if (month === "September") {
         return 9;
-    } else if (month == "October") {
+    } else if (month === "October") {
         return 10;
-    } else if (month == "November") {
+    } else if (month === "November") {
         return 11;
-    } else if (month == "December") {
+    } else if (month === "December") {
         return 12;
     } else {
         return false;
