@@ -22,15 +22,69 @@ var medicines = [
 
 // updates the current medicine container with the medicine dictionary
 function editCurrentMedicine() {
-    var final = '<tbody>\n<tr class="unread">\n<td><h6 class="mb-1">Medication/Illness</h6></td><td><h6 class="mb-1">Frequency</h6></td><td><h6 class="mb-1">Actions</h6></td></tr>';
+    var medicines = [
+    {
+      name: "Vitamin D",
+      disease: "Vitamin D Deficiency",
+      dosageAmount: 1,
+      dosageUnit: "softgel",
+      frequencyNumber: 1,
+      frequencyUnit: "Day(s)",
+      takeAsNeeded: false,
+      startDateMonth: 1,
+      startDateDay: 2,
+      startDateYear: 2022,
+      finishDateMonth: 1,
+      finishDateDay: 10,
+      finishDateYear: 2023,
+      indefiniteUsage: false,
+      notes: "take with water and a meal",
+    },
+  ];
+    var final = `<tbody>
+                          <tr class="unread">
+                            <td>
+                              <h6 class="mb-1">Medication/Illness</h6>
+                            </td>
+                            <td>
+                              <h6 class="mb-1">Dosage</h6>
+                            </td>
+                            <td><h6 class="mb-1">Actions</h6></td>
+                          </tr>\n`;
 
-    var table = document.getElementById("current-medication-table")
-    for (let index = 0; index < medicines.length(); index++) {
-        final += '<tr class="unread"><td><h6 class="mb-1">'+medicine[index]["name"]+'</h6><p class="m-0">'+medicine[index]["disease"]+'</p></td><td><h6 class="text-muted"><iclass="fas fa-circle text-c-green f-10 m-r-15"></i>'+medicine[index]["frequencyUnit"]+'</h6></td><td><ahref="#!"class="label theme-bg2 text-white f-12">Delete</a><ahref="#!"class="label theme-bg text-white f-12">Edit</a></td></tr>';
+    for (let index = 0; index < medicines.length; index++) {
+      final += `<tr class="unread">
+                            <td>
+                              <h6 class="mb-1">`+medicines[index]['name']+`</h6>
+                              <p class="m-0">`+medicines[index]['disease']+`</p>
+                            </td>
+                            <td>
+                              <h6 class="text-muted">
+                                <i
+                                  class="fas fa-circle text-c-green f-10 m-r-15"></i
+                                >`+medicines[index]['dosageAmount'].toString()+' '+medicines[index]['dosageUnit']+' every '+medicines[index]['frequencyNumber'].toString()+' '+medicines[index]['frequencyUnit']+`
+                              </h6>
+                            </td>
+                    
+                            <td>
+                              <a
+                                href="#!"
+                                class="label theme-bg2 text-white f-12"
+                                >Delete</a
+                              ><a
+                                href="#!"
+                                class="label theme-bg text-white f-12"
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>`;
     }
-    final += '</tbody>';
-    table.innerHTML = final;
-}
+    final += "</tbody>";
+    document.getElementById("current-medication-table").innerHTML = final;
+    //return final;
+  }
+
+editCurrentMedicine();
 
 // removes a medication from the medicines list
 function deleteMedicine(name) {
