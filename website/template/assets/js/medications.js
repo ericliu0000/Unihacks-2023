@@ -8,8 +8,8 @@ let medicines = [
     frequencyNumber: 1,
     frequencyUnit: "Day(s)",
     takeAsNeeded: false,
-    startDate: new Date(2022, 1, 2),
-    finishDate: new Date(2023, 1, 10),
+    startDate: new Date(2023, 1, 2),
+    finishDate: new Date(2026, 1, 10),
     indefiniteUsage: false,
     notes: "take with water and a meal",
   },
@@ -27,7 +27,7 @@ function editCurrentMedicine() {
                             <td>
                               <h6 class="mb-1">Dosage</h6>
                             </td>
-                            <td><h6 class="mb-1">Actions</h6></td>
+                            <td><h6 class="mb-1">Action</h6></td>
                           </tr>\n`;
 
     for (let index = 0; index < medicines.length; index++) {
@@ -67,10 +67,6 @@ function editCurrentMedicine() {
                                 class="label theme-bg2 text-white f-12"
                                 style="cursor: pointer;"
                                 >Delete</a
-                              ><a
-                                href="#!"
-                                class="label theme-bg text-white f-12"
-                                >Edit</a
                               >
                             </td>
                           </tr>`;
@@ -100,10 +96,15 @@ function deleteMedicine(name) {
 function editMedicine() {}
 
 function nextDosage() {
+  Date.prototype.addHours = function(h) {
+    this.setTime(this.getTime() + (h*60*60*1000));
+    return this;
+  }
   if (medicines.length <= 0) {
     document.getElementById("next-dosage").innerHTML = "No medications found.";
   } else {
-    let maxTime;
+    let minTime = null;
+    let minMedicine = null;
     const currentTime = new Date();
     for (let i = 0; i < medicines.length; i++) {
       let factor = medicines[i]["frequencyNumber"];
@@ -115,14 +116,44 @@ function nextDosage() {
           factor *= 24;
           break;
         case "Month(s)":
-          factor *= 24 * 31
+          factor *= 24 * 28;
           break;
         case "Year(s)":
-          factor *= 24 * 31 * 365
+          factor *= 24 * 31 * 365;
           break;
       }
-      
+      if (factor < minTime || minTime == null || minMedicine == null) {
+        minTime = factor;
+        minMedicine = medicines[i];
+      }
     }
+    let newTime = currentTime.addHours(minTime);
+    document.getElementById("next-dosage").innerHTML =
+      `<div
+    class="row align-items-center justify-content-center">
+    <div class="col">
+      <h5 class="m-0">Next Dosage</h5>
+    </div>
+    <div class="col-auto">
+      <label
+        class="label theme-bg2 text-white f-14 f-w-400 float-right"
+        >In ` +
+      minMedicine['frequencyNumber']+' '+minMedicine['frequencyUnit']+
+      `</label
+      >
+    </div>
+  </div>
+  <h2 class="mt-3 f-w-300">` +
+      minMedicine["name"] +
+      `</h2>
+  <h4 class="text-muted mt-4 mb-0">` +
+      newTime.toString() +
+      `</h4>`;
+
+    console.log(
+      minMedicine
+    );
+    console.log(minTime);
   }
 }
 
@@ -133,19 +164,19 @@ function manualCreateMedicine() {
     disease: document.getElementById("manualDisease").value,
     dosageAmount: Number(document.getElementById("manualDosageAmount").value),
     dosageUnit: document.getElementById("manualDosageUnit").value,
-    frequencyNumber: Number(
+    frequencyNumber: Math.round(Number(
       document.getElementById("manualFrequencyNumber").value
-    ),
+    )),
     frequencyUnit: document.getElementById("manualFrequencyUnit").value,
     takeAsNeeded: document.getElementById("manualTakeAsNeeded").checked,
     startDate: new Date(
       Number(document.getElementById("manualStartDateYear").value),
-      monthToInt(document.getElementById("manualStartDateMonth").value),
+      monthToInt(document.getElementById("manualStartDateMonth").value)-1,
       Number(document.getElementById("manualStartDateDay").value)
     ),
     finishDate: new Date(
       Number(document.getElementById("manualFinishDateYear").value),
-      monthToInt(document.getElementById("manualFinishDateMonth").value),
+      monthToInt(document.getElementById("manualFinishDateMonth").value)-1,
       Number(document.getElementById("manualFinishDateDay").value)
     ),
     indefiniteUsage: document.getElementById("manualIndefiniteUsage").checked,
