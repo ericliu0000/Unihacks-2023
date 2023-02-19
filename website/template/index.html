@@ -152,7 +152,9 @@
                       </div>
                       <div class="card-block py-3">
                         <div class="table-responsive">
-                          <table class="table table-hover" id="current-medication-table">
+                          <table
+                            class="table table-hover"
+                            id="current-medication-table">
                             <tbody>
                               <tr class="unread">
                                 <td>
@@ -321,24 +323,12 @@
                                       placeholder="Unit" />
                                   </div>
                                 </div>
-                                <small
-                                  id="manualDosageHelp"
-                                  class="form-text text-muted"
-                                  >ex. 1 pill, 2 mL</small
-                                >
-                              </div>
-                              <div class="form-group">
-                                <label>Frequency</label>
+                                
+                              <br>
+                           
 
                                 <div class="row">
-                                  <div class="col-3">
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      id="manualFrequencyAmount"
-                                      aria-describedby="manualFrequencyHelp"
-                                      placeholder="Amount" />
-                                  </div>
+                                  
                                   <div
                                     class="col-2 text-center align-items-center">
                                     <label>every</label>
@@ -354,18 +344,19 @@
                                   <div class="col">
                                     <select
                                       class="form-control"
-                                      id="manualFrequencyUnit">
-                                      <option>Hour(s)</option>
-                                      <option>Day(s)</option>
-                                      <option>Month(s)</option>
-                                      <option>Year(s)</option>
+                                      id="manualFrequencyUnit"
+                                      name="manualFrequencyUnit">
+                                      <option value="Hour(s)">Hour(s)</option>
+                                      <option value="Day(s)">Day(s)</option>
+                                      <option value="Month(s)">Month(s)</option>
+                                      <option value="Year(s)">Year(s)</option>
                                     </select>
                                   </div>
                                 </div>
                                 <small
                                   id="manualFrequencyHelp"
                                   class="form-text text-muted"
-                                  >ex. 1 every 1 Day, 1 every 5 Hours</small
+                                  >ex. 1 pill every 1 Day, 2 mg every 5 Hours</small
                                 >
                               </div>
                               <div class="form-group form-check">
@@ -387,77 +378,75 @@
                                 <label>Usage Start Date</label>
                                 <div class="row">
                                   <div class="col-md">
-                                    <label for="manualStartDateMonth"
-                                      >Month</label
-                                    >
+                                    
 
                                     <select
                                       class="form-control col-md"
-                                      id="manualStartDateMonth">
-                                      <option>January</option>
-                                      <option>February</option>
-                                      <option>March</option>
-                                      <option>April</option>
-                                      <option>May</option>
-                                      <option>June</option>
-                                      <option>July</option>
-                                      <option>August</option>
-                                      <option>September</option>
-                                      <option>October</option>
-                                      <option>November</option>
-                                      <option>December</option>
+                                      id="manualStartDateMonth"
+                                      name="manualStartDateMonth">
+                                      <option>Month</option>
+                                      <option value="January">January</option>
+                                      <option value="February">February</option>
+                                      <option value="March">March</option>
+                                      <option value="April">April</option>
+                                      <option value="May">May</option>
+                                      <option value="June">June</option>
+                                      <option value="July">July</option>
+                                      <option value="August">August</option>
+                                      <option value="September">September</option>
+                                      <option value="October">October</option>
+                                      <option value="November">November</option>
+                                      <option value="December">December</option>
                                     </select>
                                   </div>
                                   <div class="col-md">
-                                    <label for="manualStartDateDay">Day</label>
+                                   
 
                                     <select
                                       class="form-control col-md"
-                                      id="manualStartDateDay">
-                                      <option>1</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                      <option>6</option>
-                                      <option>7</option>
-                                      <option>8</option>
-                                      <option>9</option>
-                                      <option>10</option>
-                                      <option>11</option>
-                                      <option>12</option>
-                                      <option>13</option>
-                                      <option>14</option>
-                                      <option>15</option>
-                                      <option>16</option>
-                                      <option>17</option>
-                                      <option>18</option>
-                                      <option>19</option>
-                                      <option>20</option>
-                                      <option>21</option>
-                                      <option>22</option>
-                                      <option>23</option>
-                                      <option>24</option>
-                                      <option>25</option>
-                                      <option>26</option>
-                                      <option>27</option>
-                                      <option>28</option>
-                                      <option>29</option>
-                                      <option>30</option>
-                                      <option>31</option>
+                                      id="manualStartDateDay"
+                                      name="manualStartDateDay">
+                                      <option>Day</option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                      <option value="6">6</option>
+                                      <option value="7">7</option>
+                                      <option value="8">8</option>
+                                      <option value="9">9</option>
+                                      <option value="10">10</option>
+                                      <option value="11">11</option>
+                                      <option value="12">12</option>
+                                      <option value="13">13</option>
+                                      <option value="14">14</option>
+                                      <option value="15">15</option>
+                                      <option value="16">16</option>
+                                      <option value="17">17</option>
+                                      <option value="18">18</option>
+                                      <option value="19">19</option>
+                                      <option value="20">20</option>
+                                      <option value="21">21</option>
+                                      <option value="22">22</option>
+                                      <option value="23">23</option>
+                                      <option value="24">24</option>
+                                      <option value="25">25</option>
+                                      <option value="26">26</option>
+                                      <option value="27">27</option>
+                                      <option value="28">28</option>
+                                      <option value="29">29</option>
+                                      <option value="30">30</option>
+                                      <option value="31">31</option>
                                     </select>
                                   </div>
                                   <div class="col-md">
-                                    <label for="manualStartDateYear"
-                                      >Year</label
-                                    >
-
                                     <input
                                       type="text"
                                       class="form-control"
                                       id="manualStartDateYear"
                                       aria-describedby=""
-                                      placeholder="" />
+                                      placeholder="Year" />
                                   </div>
                                 </div>
                                 <small
@@ -471,77 +460,77 @@
                                 <label>Usage Finish Date</label>
                                 <div class="row">
                                   <div class="col-md">
-                                    <label for="manualFinishDateMonth"
-                                      >Month</label
-                                    >
+                                    
 
                                     <select
                                       class="form-control col-md"
-                                      id="manualFinishDateMonth">
-                                      <option>January</option>
-                                      <option>February</option>
-                                      <option>March</option>
-                                      <option>April</option>
-                                      <option>May</option>
-                                      <option>June</option>
-                                      <option>July</option>
-                                      <option>August</option>
-                                      <option>September</option>
-                                      <option>October</option>
-                                      <option>November</option>
-                                      <option>December</option>
+                                      id="manualFinishDateMonth"
+                                      name="manualFinishDateMonth">
+                                      <option>Month</option>
+                                      <option value="January">January</option>
+                                      <option value="February">February</option>
+                                      <option value="March">March</option>
+                                      <option value="April">April</option>
+                                      <option value="May">May</option>
+                                      <option value="June">June</option>
+                                      <option value="July">July</option>
+                                      <option value="August">August</option>
+                                      <option value="September">September</option>
+                                      <option value="October">October</option>
+                                      <option value="November">November</option>
+                                      <option value="December">December</option>
                                     </select>
                                   </div>
                                   <div class="col-md">
-                                    <label for="manualFinishDateDay">Day</label>
+                                    
 
                                     <select
                                       class="form-control col-md"
-                                      id="manualFinishDateDay">
-                                      <option>1</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                      <option>6</option>
-                                      <option>7</option>
-                                      <option>8</option>
-                                      <option>9</option>
-                                      <option>10</option>
-                                      <option>11</option>
-                                      <option>12</option>
-                                      <option>13</option>
-                                      <option>14</option>
-                                      <option>15</option>
-                                      <option>16</option>
-                                      <option>17</option>
-                                      <option>18</option>
-                                      <option>19</option>
-                                      <option>20</option>
-                                      <option>21</option>
-                                      <option>22</option>
-                                      <option>23</option>
-                                      <option>24</option>
-                                      <option>25</option>
-                                      <option>26</option>
-                                      <option>27</option>
-                                      <option>28</option>
-                                      <option>29</option>
-                                      <option>30</option>
-                                      <option>31</option>
+                                      id="manualFinishDateDay"
+                                      name="manualFinishDateDay">
+                                      <option>Day</option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                      <option value="4">4</option>
+                                      <option value="5">5</option>
+                                      <option value="6">6</option>
+                                      <option value="7">7</option>
+                                      <option value="8">8</option>
+                                      <option value="9">9</option>
+                                      <option value="10">10</option>
+                                      <option value="11">11</option>
+                                      <option value="12">12</option>
+                                      <option value="13">13</option>
+                                      <option value="14">14</option>
+                                      <option value="15">15</option>
+                                      <option value="16">16</option>
+                                      <option value="17">17</option>
+                                      <option value="18">18</option>
+                                      <option value="19">19</option>
+                                      <option value="20">20</option>
+                                      <option value="21">21</option>
+                                      <option value="22">22</option>
+                                      <option value="23">23</option>
+                                      <option value="24">24</option>
+                                      <option value="25">25</option>
+                                      <option value="26">26</option>
+                                      <option value="27">27</option>
+                                      <option value="28">28</option>
+                                      <option value="29">29</option>
+                                      <option value="30">30</option>
+                                      <option value="31">31</option>
                                     </select>
                                   </div>
                                   <div class="col-md">
-                                    <label for="manualFinishDateYear"
-                                      >Year</label
-                                    >
+                                    
 
                                     <input
                                       type="text"
                                       class="form-control"
                                       id="manualFinishDateYear"
                                       aria-describedby=""
-                                      placeholder="" />
+                                      placeholder="Year" />
                                   </div>
                                 </div>
                                 <small
@@ -578,7 +567,7 @@
                                 >
                               </div>
                               <button
-                                type="submit"
+                                type="button"
                                 class="btn btn-primary"
                                 onclick="manualCreateMedicine()">
                                 Submit
@@ -590,7 +579,6 @@
                     </div>
                   </div>
                   <!--[ new medications ] end-->
-                  
 
                   <div class="col-xl-8 col-md-12 m-b-30">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -1032,5 +1020,72 @@
     <script src="assets/js/vendor-all.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/pcoded.min.js"></script>
+    <script>
+      //document.getElementById("current-medication-table").innerHTML = "<h1>yeah idk</h1><p>idk</p>";
+
+      // updates the current medicine container with the medicine dictionary
+      function editCurrentMedicine() {
+        var medicines = [
+        {
+          name: "Vitamin D",
+          disease: "Vitamin D Deficiency",
+          dosageAmount: 1,
+          dosageUnit: "softgel",
+          frequencyNumber: 1,
+          frequencyUnit: "Day(s)",
+          takeAsNeeded: false,
+          startDateMonth: 1,
+          startDateDay: 2,
+          startDateYear: 2022,
+          finishDateMonth: 1,
+          finishDateDay: 10,
+          finishDateYear: 2023,
+          indefiniteUsage: false,
+          notes: "take with water and a meal",
+        },
+      ];
+        var final = `<tbody>
+                              <tr class="unread">
+                                <td>
+                                  <h6 class="mb-1">Medication/Illness</h6>
+                                </td>
+                                <td>
+                                  <h6 class="mb-1">Dosage</h6>
+                                </td>
+                                <td><h6 class="mb-1">Actions</h6></td>
+                              </tr>\n`;
+
+        for (let index = 0; index < medicines.length; index++) {
+          final += `<tr class="unread">
+                                <td>
+                                  <h6 class="mb-1">`+medicines[index]['name']+`</h6>
+                                  <p class="m-0">`+medicines[index]['disease']+`</p>
+                                </td>
+                                <td>
+                                  <h6 class="text-muted">
+                                    <i
+                                      class="fas fa-circle text-c-green f-10 m-r-15"></i
+                                    >`+medicines[index]['dosageAmount'].toString()+' '+medicines[index]['dosageUnit']+' every '+medicines[index]['frequencyNumber'].toString()+' '+medicines[index]['frequencyUnit']+`
+                                  </h6>
+                                </td>
+                        
+                                <td>
+                                  <a
+                                    href="#!"
+                                    class="label theme-bg2 text-white f-12"
+                                    >Delete</a
+                                  ><a
+                                    href="#!"
+                                    class="label theme-bg text-white f-12"
+                                    >Edit</a
+                                  >
+                                </td>
+                              </tr>`;
+        }
+        final += "</tbody>";
+        return final;
+      }
+      document.getElementById("current-medication-table").innerHTML = editCurrentMedicine();
+    </script>
   </body>
 </html>
