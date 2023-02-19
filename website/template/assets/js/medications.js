@@ -106,28 +106,25 @@ function deleteMedicine(name) {
 // manually adds a medication to the medicines list
 function manualCreateMedicine() {
   medicines.push({
-    name: document.getElementById("manualName").value,
-    disease: document.getElementById("manualDisease").value,
-    dosageAmount: Number(document.getElementById("manualDosageAmount").value),
-    dosageUnit: document.getElementById("manualDosageUnit").value,
-    frequencyAmount: Number(
-      document.getElementById("manualFrequencyAmount").value
-    ),
-    frequencyNumber: Number(
+    "name": document.getElementById("manualName").value,
+    "disease": document.getElementById("manualDisease").value,
+    "dosageAmount": Number(document.getElementById("manualDosageAmount").value),
+    "dosageUnit": document.getElementById("manualDosageUnit").value,
+    "frequencyNumber": Number(
       document.getElementById("manualFrequencyNumber").value
     ),
-    frequencyUnit: document.getElementById("manualFrequencyUnit").value,
-    takeAsNeeded: document.getElementById("manualTakeAsNeeded").value,
-    startDateMonth: document.getElementById("manualStartDateMonth").value,
-    startDateDay: Number(document.getElementById("manualStartDateDay").value),
-    startDateYear: Number(document.getElementById("manualStartDateYear").value),
-    finishDateMonth: document.getElementById("manualFinishDateMonth").value,
-    finishDateDay: Number(document.getElementById("manualFinishDateDay").value),
-    finishDateYear: Number(
+    "frequencyUnit": document.getElementById("manualFrequencyUnit").value,
+    "takeAsNeeded": document.getElementById("manualTakeAsNeeded").value,
+    "startDateMonth": document.getElementById("manualStartDateMonth").value,
+    "startDateDay": Number(document.getElementById("manualStartDateDay").value),
+    "startDateYear": Number(document.getElementById("manualStartDateYear").value),
+    "finishDateMonth": document.getElementById("manualFinishDateMonth").value,
+    "finishDateDay": Number(document.getElementById("manualFinishDateDay").value),
+    "finishDateYear": Number(
       document.getElementById("manualFinishDateYear").value
     ),
-    indefiniteUsage: document.getElementById("manualIndefiniteUsage").value,
-    notes: document.getElementById("manualNotes").value,
+    "indefiniteUsage": document.getElementById("manualIndefiniteUsage").value,
+    "notes": document.getElementById("manualNotes").value,
   });
   editCurrentMedicine();
 }
