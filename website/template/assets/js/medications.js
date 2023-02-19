@@ -61,10 +61,11 @@ function editCurrentMedicine() {
                             </td>
                     
                             <td>
-                              <a
+                              <button
+                                onclick()
                                 href="#!"
                                 class="label theme-bg2 text-white f-12"
-                                >Delete</a
+                                >Delete</button
                               ><a
                                 href="#!"
                                 class="label theme-bg text-white f-12"
